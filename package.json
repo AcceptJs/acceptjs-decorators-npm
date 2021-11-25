@@ -1,0 +1,49 @@
+{
+  "name": "acceptjs-decorators",
+  "version": "1.0.0",
+  "description": "AcceptJS decorators for Javascript and Typescript",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AcceptJs/acceptjs-decorator-node.git"
+  },
+  "keywords": [
+    "AcceptJs"
+  ],
+  "author": "Richard Reynolds",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AcceptJs/acceptjs-decorator-node/issues"
+  },
+  "homepage": "https://github.com/AcceptJs/acceptjs-decorator-node#readme",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.85",
+    "@types/jest": "^27.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
