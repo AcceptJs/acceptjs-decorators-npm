@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AcceptJs/acceptjs-decorator-node.git"
+    "url": "git+https://github.com/AcceptJs/acceptjs-decorators-npm.git"
   },
   "keywords": [
     "AcceptJs"
@@ -25,9 +25,9 @@
   "author": "Richard Reynolds",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AcceptJs/acceptjs-decorator-node/issues"
+    "url": "https://github.com/AcceptJs/acceptjs-decorator-npm/issues"
   },
-  "homepage": "https://github.com/AcceptJs/acceptjs-decorator-node#readme",
+  "homepage": "https://github.com/AcceptJs/acceptjs-decorator-npm#readme",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.85",
     "@types/jest": "^27.0.3",
