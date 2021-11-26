@@ -1,5 +1,5 @@
 {
-  "name": "acceptjs-decorators",
+  "name": "@acceptjs/decorators",
   "version": "1.0.0",
   "description": "AcceptJS decorators for Javascript and Typescript",
   "main": "lib/index.js",
