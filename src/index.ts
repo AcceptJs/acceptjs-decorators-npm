@@ -1,20 +1,18 @@
 import {
   APIGatewayProxyHandler,
   APIGatewayProxyEvent,
-  APIGatewayProxyResult,
-  Context,
-  Callback
+  APIGatewayProxyResult
 } from 'aws-lambda';
 import * as https from 'https';
 
 export const mockable = (handlerToDecorate: APIGatewayProxyHandler) => {
   return async (
     event: APIGatewayProxyEvent,
-    context: Context,
-    callback: Callback<APIGatewayProxyResult>
+    context?: any,
+    callback?: any
   ) => {
-    if (event.headers['x-mock-via-accept'] === undefined) {
-      return handlerToDecorate(event, context, callback);
+    if (!event.headers || event.headers['x-mock-via-accept'] === undefined) {
+      return handlerToDecorate(event, context, callback) as Promise<APIGatewayProxyResult>;
     } else {
       if (!process.env.ACCEPTJS_BACKEND) {
         return {

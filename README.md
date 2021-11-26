@@ -2,6 +2,6 @@
 
 ## Install
 
-`npm install --save acceptjs-decorators`
+`npm install --save @acceptjs/decorators`
 
 ## Usage
