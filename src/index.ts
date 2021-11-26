@@ -16,6 +16,16 @@ export const mockable = (handlerToDecorate: APIGatewayProxyHandler) => {
     if (event.headers['x-mock-via-accept'] === undefined) {
       return handlerToDecorate(event, context, callback);
     } else {
+      if (!process.env.ACCEPTJS_BACKEND) {
+        return {
+          statusCode: 500,
+          body: 'ACCEPTJS_BACKEND environment variable is unset',
+          headers: {
+            'Access-Control-Allow-Origin': event.headers.origin ?? ''
+          }
+        };
+      }
+
       const body = await new Promise<string>((resolve, reject) => {
         const options = {
           hostname: process.env.ACCEPTJS_BACKEND,
@@ -32,6 +42,7 @@ export const mockable = (handlerToDecorate: APIGatewayProxyHandler) => {
           .on('error', (reason) => reject(reason))
           .end();
       });
+
       return {
         statusCode: 200,
         body,
